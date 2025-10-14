@@ -2,7 +2,13 @@
   "version": 1,
   "rules": [
     {
-      "domain_suffix": ["turborepo.com", "turbo.build", "rolldown.rs"]
+      "domain_suffix": [
+        "turborepo.com",
+        "turbo.build",
+        "rolldown.rs",
+        "prisma.io",
+        "prisma-data.net"
+      ]
     }
   ]
 }
