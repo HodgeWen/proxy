@@ -2,7 +2,7 @@
   "version": 1,
   "rules": [
     {
-      "domain_suffix": ["wd-gold.com"]
+      "domain_suffix": ["wd-gold.com", "wenhongjie.tech"]
     }
   ]
 }
