@@ -2,7 +2,13 @@
   "version": 1,
   "rules": [
     {
-      "domain_suffix": ["chatgpt.com", "claude.ai", "zed.dev", "anthropic.com"],
+      "domain_suffix": [
+        "chatgpt.com",
+        "googleapis.com",
+        "claude.ai",
+        "zed.dev",
+        "anthropic.com"
+      ],
       "domain": ["gemini.google.com"]
     }
   ]
