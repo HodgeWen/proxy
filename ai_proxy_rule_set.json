@@ -7,7 +7,8 @@
         "googleapis.com",
         "claude.ai",
         "zed.dev",
-        "anthropic.com"
+        "anthropic.com",
+        "cursor.sh"
       ],
       "domain": ["gemini.google.com"]
     }
