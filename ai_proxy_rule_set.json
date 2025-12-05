@@ -9,8 +9,7 @@
         "zed.dev",
         "anthropic.com",
         "cursor.sh"
-      ],
-      "domain": ["gemini.google.com"]
+      ]
     }
   ]
 }
