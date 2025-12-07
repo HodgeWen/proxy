@@ -7,9 +7,9 @@
         "googleapis.com",
         "claude.ai",
         "zed.dev",
-        "anthropic.com",
-        "cursor.sh"
-      ]
+        "anthropic.com"
+      ],
+      "domain": ["gemini.google.com"]
     }
   ]
 }
