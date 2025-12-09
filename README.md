@@ -13,6 +13,22 @@
 - `default.json`：常用开发/工具站点集合（走代理）。
 - `direct.json`：自定义直连白名单（域名/IP）。
 
+## 在 [GUI.for.SingBox](https://github.com/GUI-for-Cores/GUI.for.SingBox) 中添加
+
+```text
+https://raw.githubusercontent.com/HodgeWen/rulesets/main/ai.json
+```
+
+```text
+https://raw.githubusercontent.com/HodgeWen/rulesets/main/default.json
+```
+
+```text
+https://raw.githubusercontent.com/HodgeWen/rulesets/main/direct.json
+```
+
+> 使用当前仓库 main 分支的 raw 地址，供远程 rule-set 引用或同步。
+
 ## 规则集字段要点（基于 Source Format 与 Headless Rule 默认字段）
 
 - `version`：规则集版本（1.12 建议 `3`；若未来升级到 1.13 可用 `4`）[#source-format](https://sing-box.sagernet.org/configuration/rule-set/source-format/)。
@@ -81,19 +97,3 @@
 ```
 
 > 请按实际出口命名替换 `outbound`，并确保最后有兜底规则（direct/block/proxy）。
-
-## 规则集文件 URL
-
-```text
-https://raw.githubusercontent.com/HodgeWen/rulesets/main/ai.json
-```
-
-```text
-https://raw.githubusercontent.com/HodgeWen/rulesets/main/default.json
-```
-
-```text
-https://raw.githubusercontent.com/HodgeWen/rulesets/main/direct.json
-```
-
-> 使用当前仓库 main 分支的 raw 地址，供远程 rule-set 引用或同步。
