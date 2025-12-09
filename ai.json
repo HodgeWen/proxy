@@ -1,7 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/HodgeWen/rulesets/main/rule-set.schema.json",
   "version": 3,
-
   "rules": [
     {
       "domain_suffix": [

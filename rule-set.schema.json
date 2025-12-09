@@ -7,6 +7,10 @@
   "required": ["version", "rules"],
   "additionalProperties": false,
   "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "可选，指向本 schema 的路径或 URL，用于编辑器提示。"
+    },
     "version": {
       "type": "integer",
       "enum": [3, 4],
