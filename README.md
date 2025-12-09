@@ -1,41 +1,93 @@
-# Proxy Rules
+# Sing-box 1.12 规则集（Source Format）
 
-这是一个个人维护的代理规则集仓库，用于配置代理软件（如 Sing-box 等）的分流规则。
+适配 sing-box v1.12.x 的 `route.rule_set` Source Format，用于补充主配置，不包含节点信息。规则格式与字段以官方文档为准：https://sing-box.sagernet.org/configuration/rule-set/source-format/ 。
 
-## 规则文件说明
+## 适用版本
 
-本项目包含以下规则集文件：
+- 建议 sing-box v1.12.x 及以上。
+- 源规则集 `version` 建议使用 `3`（1.11 引入；1.13 起有 `4`，若需兼容 1.12 请保持 `3`）。
 
-### 1. AI 服务代理规则 (`ai_proxy_rule_set.json`)
+## 仓库文件（不展示具体域名）
 
-包含主流 AI 助手及相关服务的域名规则，建议走代理节点。
+- `ai.json`：AI/LLM 域名集合（走代理）。
+- `default.json`：常用开发/工具站点集合（走代理）。
+- `direct.json`：自定义直连白名单（域名/IP）。
 
-- **包含域名**: ChatGPT, Claude, Gemini (Google), Zed AI, Anthropic 等。
+## 规则集字段要点（基于 Source Format 与 Headless Rule 默认字段）
 
-### 2. 开发工具代理规则 (`custom_proxy_rule_set.json`)
+- `version`：规则集版本（1.12 建议 `3`；若未来升级到 1.13 可用 `4`）[#source-format](https://sing-box.sagernet.org/configuration/rule-set/source-format/)。
+- `rules`：Headless Rule 列表，常用匹配字段（详见默认字段说明：[headless-rule](https://sing-box.sagernet.org/configuration/rule-set/headless-rule/#default-fields)）：
+  - 域名：`domain`（精确）、`domain_suffix`（后缀）、`domain_keyword`（包含关键字）、`domain_regex`（正则）。
+  - IP：`ip_cidr`（目标 IP/CIDR）、`ip_is_private`（匹配私网）。
+  - 来源 IP/端口：`source_ip_cidr`、`source_ip_is_private`、`source_port`、`source_port_range`。
+  - 端口：`port`（单值）、`port_range`（如 `"1000:2000"`, `":443"`）。
+  - 网络/入口：`network`（`tcp`/`udp`/`icmp`），`inbound`（入站 tag），`protocol`（嗅探到的协议），`ip_version`（4/6）。
+  - 进程/客户端（平台相关）：`process_name`，`process_path`，`process_path_regex`，`package_name`（Android）。
+  - 逻辑与反转：`type: "logical"`，`mode: "and"|"or"`，`rules`（子规则）；`invert` 可反转匹配结果。
+- 动作/出口：在路由规则中使用 `action: "route"` 并指定 `outbound`（1.11 起迁移到动作字段；1.12 仍需写明出口标签）。
 
-包含开发过程中常用的工具、文档、技术社区等域名，建议走代理节点以加速访问。
+> Source Format / Headless Rule 默认字段本身不含 `rule_set` 相关键；`rule_set` 的引用在主配置的 `route.rules` 中书写（下文示例即此）。
 
-- **包含域名**: Turborepo, Prisma, ElysiaJS, Rollup, Rolldown 等。
-
-### 3. 自定义直连规则 (`custom_direct_rule_set.json`)
-
-包含个人站点或明确不需要代理的域名，建议配置为直连。
-
-- **包含域名**: 个人博客及相关服务。
-
-## 格式说明
-
-所有规则文件均采用 JSON 格式，结构如下：
+## 规则集基础模板
 
 ```json
 {
-  "version": 1,
+  "version": 3,
   "rules": [
     {
       "domain_suffix": ["example.com"],
-      "domain": ["exact.example.com"]
+      "ip_cidr": ["203.0.113.1/32"]
     }
   ]
 }
 ```
+
+## 在 sing-box 中引用规则集（示例）
+
+```json
+{
+  "route": {
+    "rule_set": [
+      { "tag": "ai", "type": "local", "format": "source", "path": "ai.json" },
+      {
+        "tag": "dev",
+        "type": "local",
+        "format": "source",
+        "path": "default.json"
+      },
+      {
+        "tag": "direct-custom",
+        "type": "local",
+        "format": "source",
+        "path": "direct.json"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": ["direct-custom"],
+        "action": "route",
+        "outbound": "direct"
+      },
+      {
+        "rule_set": ["ai", "dev"],
+        "network": ["tcp", "udp"],
+        "action": "route",
+        "outbound": "proxy"
+      },
+      { "action": "route", "outbound": "direct" }
+    ]
+  }
+}
+```
+
+> 请按实际出口命名替换 `outbound`，并确保最后有兜底规则（direct/block/proxy）。
+
+## 规则集文件 URL 引用示例
+
+```text
+https://raw.githubusercontent.com/<OWNER>/<REPO>/<BRANCH>/ai.json
+https://raw.githubusercontent.com/<OWNER>/<REPO>/<BRANCH>/default.json
+https://raw.githubusercontent.com/<OWNER>/<REPO>/<BRANCH>/direct.json
+```
+
+> 将 `<OWNER>/<REPO>/<BRANCH>` 替换为你的 GitHub 仓库与分支，供远程 rule-set 引用或同步。
