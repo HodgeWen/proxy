@@ -82,12 +82,18 @@
 
 > 请按实际出口命名替换 `outbound`，并确保最后有兜底规则（direct/block/proxy）。
 
-## 规则集文件 URL 引用示例
+## 规则集文件 URL
 
 ```text
-https://raw.githubusercontent.com/<OWNER>/<REPO>/<BRANCH>/ai.json
-https://raw.githubusercontent.com/<OWNER>/<REPO>/<BRANCH>/default.json
-https://raw.githubusercontent.com/<OWNER>/<REPO>/<BRANCH>/direct.json
+https://raw.githubusercontent.com/HodgeWen/rulesets/main/ai.json
 ```
 
-> 将 `<OWNER>/<REPO>/<BRANCH>` 替换为你的 GitHub 仓库与分支，供远程 rule-set 引用或同步。
+```text
+https://raw.githubusercontent.com/HodgeWen/rulesets/main/default.json
+```
+
+```text
+https://raw.githubusercontent.com/HodgeWen/rulesets/main/direct.json
+```
+
+> 使用当前仓库 main 分支的 raw 地址，供远程 rule-set 引用或同步。
