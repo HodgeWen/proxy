@@ -15,16 +15,28 @@
 
 ## 在 [GUI.for.SingBox](https://github.com/GUI-for-Cores/GUI.for.SingBox) 中添加
 
-```text
-https://raw.githubusercontent.com/HodgeWen/rulesets/main/ai.json
-```
+默认代理
 
 ```text
 https://raw.githubusercontent.com/HodgeWen/rulesets/main/default.json
 ```
 
+人工智能
+
+```text
+https://raw.githubusercontent.com/HodgeWen/rulesets/main/ai.json
+```
+
+直连
+
 ```text
 https://raw.githubusercontent.com/HodgeWen/rulesets/main/direct.json
+```
+
+gemini
+
+```text
+https://raw.githubusercontent.com/HodgeWen/rulesets/main/gemini.json
 ```
 
 > 使用当前仓库 main 分支的 raw 地址，供远程 rule-set 引用或同步。
