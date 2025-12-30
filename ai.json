@@ -4,14 +4,12 @@
     {
       "domain_suffix": [
         "chatgpt.com",
-        "googleapis.com",
         "claude.ai",
         "zed.dev",
         "anthropic.com",
         "claude.com",
         "cursor.sh"
-      ],
-      "domain": ["gemini.google.com"]
+      ]
     }
   ]
 }
