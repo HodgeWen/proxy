@@ -4,10 +4,11 @@
     {
       "domain": [
         "gemini.google.com",
-        "googleapis.com",
         "one.google.com",
-        "aistudio.google.com"
-      ]
+        "aistudio.google.com",
+        "ai.google.dev"
+      ],
+      "domain_suffix": ["googleapis.com"]
     }
   ]
 }
