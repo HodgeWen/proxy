@@ -6,9 +6,16 @@
         "gemini.google.com",
         "one.google.com",
         "aistudio.google.com",
-        "ai.google.dev"
+        "ai.google.dev",
+        "apis.google.com",
+        "www.google-analytics.com"
       ],
-      "domain_suffix": ["googleapis.com"]
+      "domain_suffix": [
+        "googleapis.com",
+        "makersuite.google.com",
+        "generativeai.google",
+        "clients6.google.com"
+      ]
     }
   ]
 }
