@@ -1,0 +1,8 @@
+# behavior: domain
+payload:
+  - +.chatgpt.com
+  - +.claude.ai
+  - +.zed.dev
+  - +.anthropic.com
+  - +.claude.com
+  - +.cursor.sh

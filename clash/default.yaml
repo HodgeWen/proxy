@@ -1,0 +1,9 @@
+# behavior: domain
+payload:
+  - +.turborepo.com
+  - +.turbo.build
+  - +.rolldown.rs
+  - +.prisma.io
+  - +.prisma-data.net
+  - +.elysiajs.com
+  - +.rollupjs.org
