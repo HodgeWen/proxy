@@ -2,8 +2,8 @@
 payload:
   - DOMAIN-SUFFIX,wd-gold.com
   - DOMAIN-SUFFIX,wenhongjie.tech
+  - DOMAIN,api.ikuncode.cc
   - DOMAIN-KEYWORD,tagxx
   - DOMAIN-KEYWORD,tagss
   - IP-CIDR,104.168.21.132/32
   - IP-CIDR,43.154.3.205/32
-  - DOMAIN,api.ikuncode.cc

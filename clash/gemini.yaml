@@ -1,12 +1,12 @@
 # behavior: domain
 payload:
+  - +.googleapis.com
+  - +.makersuite.google.com
+  - +.generativeai.google
+  - +.clients6.google.com
   - gemini.google.com
   - one.google.com
   - aistudio.google.com
   - ai.google.dev
   - apis.google.com
   - www.google-analytics.com
-  - +.googleapis.com
-  - +.makersuite.google.com
-  - +.generativeai.google
-  - +.clients6.google.com
