@@ -62,7 +62,8 @@ export const rulesets: RuleSetConfig[] = [
         'googleapis.com',
         'makersuite.google.com',
         'generativeai.google',
-        'clients6.google.com'
+        'clients6.google.com',
+        'antigravity-unleash.goog'
       ]
     }
   }
