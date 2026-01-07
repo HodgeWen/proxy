@@ -62,7 +62,17 @@ export const rulesets: RuleSetConfig[] = [
         'googleapis.com',
         'makersuite.google.com',
         'generativeai.google',
-        'clients6.google.com'
+        'clients6.google.com',
+        "gemini.google",
+        "deepmind.google",
+        "opal.google",
+        "labs.google",
+        "jules.google",
+        "deepmind.com",
+        "notebooklm.google",
+        "ai.studio",
+        "opal.google.com",
+        "jules.google.com",
       ],
       domain_keyword: ['antigravity']
     }
