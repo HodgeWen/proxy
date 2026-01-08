@@ -40,10 +40,10 @@ export const rulesets: RuleSetConfig[] = [
     name: 'direct',
     behavior: 'classical',
     rules: {
-      domain_suffix: ['wd-gold.com', 'wenhongjie.tech', "aihubmix.com"],
+      domain_suffix: ['wd-gold.com', 'wenhongjie.tech'],
       domain_keyword: ['tagxx', 'tagss'],
       ip_cidr: ['104.168.21.132/32', '43.154.3.205/32'],
-      domain: ['api.ikuncode.cc']
+      domain: ['api.ikuncode.cc', "aihubmix.com"]
     }
   },
   {

@@ -3,12 +3,12 @@
   "rules": [
     {
       "domain": [
-        "api.ikuncode.cc"
+        "api.ikuncode.cc",
+        "aihubmix.com"
       ],
       "domain_suffix": [
         "wd-gold.com",
-        "wenhongjie.tech",
-        "aihubmix.com"
+        "wenhongjie.tech"
       ],
       "domain_keyword": [
         "tagxx",
