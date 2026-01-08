@@ -2,6 +2,8 @@
 payload:
   - DOMAIN-SUFFIX,wd-gold.com
   - DOMAIN-SUFFIX,wenhongjie.tech
+  - DOMAIN-SUFFIX,aihubmix.com
+  - DOMAIN-SUFFIX,wenhongjie.tech
   - DOMAIN,api.ikuncode.cc
   - DOMAIN-KEYWORD,tagxx
   - DOMAIN-KEYWORD,tagss
